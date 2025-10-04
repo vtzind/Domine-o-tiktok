@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domine o TikTok - Ganhe 2K Seguidores Rápido</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: #ecf0f1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(40, 40, 40, 0.8);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 1px solid #333;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff0050, #ff375f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #bdc3c7;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #ff0050, #ff375f);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 80, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 0, 80, 0.4);
+        }
+
+        /* Seção de Vídeos */
+        .videos-section {
+            margin: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #ecf0f1;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .video-card {
+            background: rgba(50, 50, 50, 0.8);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid #444;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff375f;
+        }
+
+        .video-container {
+            width: 280px;
+            height: 500px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #555;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 13px;
+            display: none;
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 13px;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-thumbnail:hover {
+            opacity: 0.9;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 0, 80, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            border: 3px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            background: rgba(255, 0, 80, 1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-placeholder {
+            width: 280px;
+            height: 500px;
+            background: linear-gradient(45deg, #333, #444);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #555;
+            cursor: pointer;
+        }
+
+        .video-placeholder::before {
+            content: '▶';
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.7);
+            z-index: 2;
+        }
+
+        .video-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #ff375f;
+            text-align: center;
+        }
+
+        .video-card p {
+            text-align: center;
+            color: #bdc3c7;
+        }
+
+        /* Guia Detalhado - AGORA VEM PRIMEIRO */
+        .estrategias-detalhadas {
+            margin: 60px 0;
+        }
+
+        .estrategia-item {
+            background: rgba(50, 50, 50, 0.8);
+            margin-bottom: 25px;
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 4px solid #ff0050;
+            border: 1px solid #444;
+        }
+
+        .estrategia-item h3 {
+            color: #ff375f;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .estrategia-item ul {
+            padding-left: 20px;
+        }
+
+        .estrategia-item li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        /* Estratégias Comprovadas - AGORA VEM DEPOIS */
+        .estrategias-section {
+            margin: 60px 0;
+        }
+
+        .estrategia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .estrategia-card {
+            background: rgba(50, 50, 50, 0.8);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #ff0050;
+            border: 1px solid #444;
+            transition: transform 0.3s ease;
+        }
+
+        .estrategia-card:hover {
+            transform: translateY(-3px);
+            border-color: #ff375f;
+        }
+
+        .estrategia-card h3 {
+            color: #ff375f;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .estrategia-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .estrategia-card li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .estrategia-card li::before {
+            content: '✓';
+            color: #ff375f;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            background: rgba(40, 40, 40, 0.8);
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-container {
+                width: 250px;
+                height: 445px;
+            }
+            
+            .video-placeholder {
+                width: 250px;
+                height: 445px;
+            }
+            
+            .estrategia-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .estrategia-item h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-container {
+                width: 220px;
+                height: 390px;
+            }
+            
+            .video-placeholder {
+                width: 220px;
+                height: 390px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DOMINE O TIKTOK</h1>
+            <p class="subtitle">Ganhe 2.000 Seguidores em 30 Dias e Comece a Vender no TikTok Shop</p>
+            <a href="#videos" class="cta-button">COMEÇAR AGORA</a>
+        </header>
+
+        <section id="videos" class="videos-section">
+            <h2 class="section-title">Vídeos Exclusivos</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-container" onclick="playYouTubeVideo(this)">
+                        <img src="capa-aula1.jpg" alt="Aula 1 - Crie e estruture seu Perfil" class="video-thumbnail">
+                        <div class="play-button">▶</div>
+                        <iframe src="https://www.youtube.com/embed/mzdtSmEso9U" 
+                                title="Aula 1 - Crie e estruture seu Perfil" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h3 class="video-title">Aula 1: Crie e estruture seu Perfil</h3>
+                    <p>Criar um perfil bem estruturado é o primeiro pilar para o sucesso no TikTok.</p>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-container" onclick="playYouTubeVideo(this)">
+                        <img src="capa-aula2.jpg" alt="Aula 2 - Como editar os videos" class="video-thumbnail">
+                        <div class="play-button">▶</div>
+                        <iframe src="https://www.youtube.com/embed/r3wsbwIjAaQ" 
+                                title="Aula 2 - Como editar os videos" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h3 class="video-title">Aula 2: Como editar os videos</h3>
+                    <p>Aprenda a criar conteúdos que engajam e viralizam rapidamente.</p>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-container" onclick="playYouTubeVideo(this)">
+                        <img src="capa-aula3.png" alt="Aula 3 - Como postar da maneira certa" class="video-thumbnail">
+                        <div class="play-button">▶</div>
+                        <iframe src="https://www.youtube.com/embed/X_392CqDn2w" 
+                                title="Aula 3 - Como postar da maneira certa" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h3 class="video-title">Aula 3: Como postar da maneira certa</h3>
+                    <p>Poste vídeos em horarios virais com sons e # do momento.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guia Detalhado AGORA VEM ANTES -->
+        <section class="estrategias-detalhadas">
+            <h2 class="section-title">Guia Completo: 5 Pilares para 2K Seguidores</h2>
+            
+            <div class="estrategia-item">
+                <h3>1️⃣ Conteúdo Viral e de Nicho</h3>
+                <ul>
+                    <li><strong>Escolha um nicho específico:</strong> Perfis muito genéricos crescem mais devagar</li>
+                    <li><strong>Exemplos de nichos:</strong> surf, humor, dicas rápidas, desafios, lifestyle</li>
+                    <li><strong>Vídeos curtos e impactantes:</strong> 15 a 30 segundos geralmente performam melhor</li>
+                    <li><strong>Conteúdo que entretém ou ensina:</strong> Algo útil rapidamente</li>
+                </ul>
+            </div>
+
+            <div class="estrategia-item">
+                <h3>2️⃣ Aproveite Tendências</h3>
+                <ul>
+                    <li><strong>Hashtags populares:</strong> Use tags em alta no momento</li>
+                    <li><strong>Sons e músicas virais:</strong> Acompanhe o que está bombando</li>
+                    <li><strong>Duetos e respostas:</strong> Aumenta a chance do seu conteúdo aparecer para mais pessoas</li>
+                    <li><strong>Observe a aba "Para Você":</strong> Adapte as tendências pro seu estilo</li>
+                </ul>
+            </div>
+
+            <div class="estrategia-item">
+                <h3>3️⃣ Postagem Estratégica</h3>
+                <ul>
+                    <li><strong>Várias vezes ao dia:</strong> Especialmente nos horários de pico (manhã e noite)</li>
+                    <li><strong>Teste diferentes formatos:</strong> Storytelling, memes, transições rápidas, "antes e depois"</li>
+                    <li><strong>Legendras chamativas:</strong> Que incentivem comentários e compartilhamentos</li>
+                    <li><strong>Consistência é fundamental:</strong> Mantenha uma rotina de postagens</li>
+                </ul>
+            </div>
+
+            <div class="estrategia-item">
+                <h3>4️⃣ Interação e Comunidade</h3>
+                <ul>
+                    <li><strong>Responda comentários rapidamente:</strong> Aumenta o engajamento</li>
+                    <li><strong>Siga contas do seu nicho:</strong> Interaja de forma genuína</li>
+                    <li><strong>Challenges e duetos:</strong> Com criadores maiores, se possível</li>
+                    <li><strong>Crie uma comunidade:</strong> Faça seus seguidores se sentirem parte</li>
+                </ul>
+            </div>
+
+            <div class="estrategia-item">
+                <h3>5️⃣ Mini Hacks de Growth</h3>
+                <ul>
+                    <li><strong>Vídeos de reação:</strong> Alto engajamento comprovado</li>
+                    <li><strong>Hooks fortes:</strong> Prenda o espectador nos primeiros 2 segundos</li>
+                    <li><strong>Incentive interação:</strong> Com perguntas ou enquetes nos comentários</li>
+                    <li><strong>Compartilhamentos:</strong> Crie conteúdo que as pessoas queiram compartilhar</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Estratégias Comprovadas AGORA VEM DEPOIS -->
+        <section class="estrategias-section">
+            <h2 class="section-title">Estratégias Comprovadas</h2>
+            <div class="estrategia-grid">
+                <div class="estrategia-card">
+                    <h3>📱 Otimização de Perfil</h3>
+                    <ul>
+                        <li>Bio que converte seguidores</li>
+                        <li>Foto de perfil impactante</li>
+                        <li>Links estratégicos</li>
+                        <li>Palavras-chave no nicho</li>
+                    </ul>
+                </div>
+                
+                <div class="estrategia-card">
+                    <h3>🎬 Estratégia de Conteúdo</h3>
+                    <ul>
+                        <li>Posts no horário certo</li>
+                        <li>Formatos virais comprovados</li>
+                        <li>Edição profissional simples</li>
+                        <li>Hook perfeito em 3 segundos</li>
+                    </ul>
+                </div>
+                
+                <div class="estrategia-card">
+                    <h3>🔥 Growth Acelerado</h3>
+                    <ul>
+                        <li>Duetos estratégicos</li>
+                        <li>Comentários que viralizam</li>
+                        <li>Hashtags que rankeiam</li>
+                        <li>Colaborações inteligentes</li>
+                    </ul>
+                </div>
+                
+                <div class="estrategia-card">
+                    <h3>💰 TikTok Shop</h3>
+                    <ul>
+                        <li>Setup da loja perfeito</li>
+                        <li>Produtos que vendem</li>
+                        <li>Vídeos de vendas</li>
+                        <li>Gestão de pedidos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h3>Pronto para Transformar seu TikTok?</h3>
+            <p style="margin: 20px 0;">Comece hoje mesmo e alcance 2.000 seguidores rapidamente!</p>
+            <a href="#videos" class="cta-button">ACESSAR TREINAMENTO</a>
+        </footer>
+    </div>
+
+    <script>
+        function playYouTubeVideo(container) {
+            const iframe = container.querySelector('iframe');
+            const thumbnail = container.querySelector('.video-thumbnail');
+            const playButton = container.querySelector('.play-button');
+            
+            // Esconde a thumbnail e o botão play
+            thumbnail.style.display = 'none';
+            playButton.style.display = 'none';
+            
+            // Mostra o iframe do YouTube
+            iframe.style.display = 'block';
+        }
+
+        // Pausa vídeo quando clicar fora (opcional)
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.video-container')) {
+                const iframes = document.querySelectorAll('iframe');
+                const thumbnails = document.querySelectorAll('.video-thumbnail');
+                const playButtons = document.querySelectorAll('.play-button');
+                
+                iframes.forEach(iframe => {
+                    iframe.style.display = 'none';
+                });
+                
+                thumbnails.forEach(thumb => {
+                    thumb.style.display = 'block';
+                });
+                
+                playButtons.forEach(button => {
+                    button.style.display = 'flex';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
